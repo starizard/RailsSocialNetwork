@@ -5,7 +5,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :username,           :null => false, :default => ""
       t.string :email,              :null => false, :default => ""
       t.string :encrypted_password, :null => false, :default => ""
-
+      t.integer :user_id
       ## Admin
       t.boolean :admin, :null => false, :default => false
       
@@ -43,7 +43,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
       t.timestamps
     end
-
+    add_index :users, :user_id ,             :unique => true
     add_index :users, :username,             :unique => true
     add_index :users, :email,                :unique => true
     add_index :users, :reset_password_token, :unique => true

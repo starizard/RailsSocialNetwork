@@ -23,3 +23,12 @@
     <%= f.submit %>
   </div>
 <% end %>
+<%= form_for @post, :html => {:multipart => true} do |f| %>
+ 
+  
+
+  <p>
+    <%= f.file_field :image %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>
