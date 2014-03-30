@@ -1,6 +1,6 @@
 Shawnsbook::Application.routes.draw do
   resources :posts
-
+  resources :users
   root "pages#home"    
   get "home", to: "pages#home", as: "home"
   get "inside", to: "pages#inside", as: "inside"
@@ -12,5 +12,5 @@ Shawnsbook::Application.routes.draw do
     root "base#index"
     resources :users
   end
-  
+  # resources :users
 end

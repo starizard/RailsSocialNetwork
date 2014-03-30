@@ -1,5 +1,6 @@
 source 'http://rubygems.org'
 ruby '2.1.1'
+gem 'rmagick'
 gem 'carrierwave'
 gem 'rails', '4.0.4'
 gem 'sass-rails', '~> 4.0.1'

@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
   
   # Validations
   # :username
-  validates :username, uniqueness: { case_sensitive: false }
+  #validates :username, uniqueness: { case_sensitive: false }
   validates_format_of :username, with: /\A[a-zA-Z0-9]*\z/, on: :create, message: "can only contain letters and digits"
   validates :username, length: { in: 4..10 }
   # :email

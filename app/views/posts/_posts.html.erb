@@ -1,7 +1,7 @@
 <table>
   <thead>
     <tr>
-      <th>Content</th>
+      <th></th>
       
       <th></th>
       <th></th>
@@ -12,9 +12,13 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        <td><br><%= post.content %></td>
-        <td><br><%= post.author_id %></td>
-        <%= image_tag post.image_url.to_s %>
+        <h1><td><br><%= post.content %></td></h1>
+        
+<td><br><br><ol><%= image_tag post.image_url(:thumb).to_s %></td>
+   <h2><td><br>-By <% @user1=User.find_by_id(post.author_id) %></td></h2>
+        
+       <td><br><%=@user1.username.capitalize %>
+
         <td><br><%= link_to 'Show', post %></td>
         <td><br><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><br><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
